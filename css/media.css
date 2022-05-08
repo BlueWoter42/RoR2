@@ -44,6 +44,7 @@
     height: 10%;
     width: 100%;
     background: white;
+    transition: all 0.3s ease 0s;
   }
 
   .icon-menu::after,
@@ -64,6 +65,20 @@
     transform: scale(1) translate(0, -50%);
   }
 
+  .icon-menu.active::after {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+
+  .icon-menu.active::before {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+
+  .icon-menu.active span {
+    transform: scale(0) translate(0, -50%);
+  }
+
   .menu-body {
     position: fixed;
     left: 0;
@@ -75,15 +90,25 @@
     transition: all 0.3s ease 0s;
   }
 
-  ul {
-    display: block;
-    padding: 100px;
+  .menu-body.active {
+    top: 0;
   }
 
-  li {
+  .l {
     color: #000;
     text-align: center;
     font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    display: block;
+    padding-top: 100px;
+  }
+
+  li {
+    text-align: center;
+    margin: 0;
     margin-bottom: 20px;
   }
 }
